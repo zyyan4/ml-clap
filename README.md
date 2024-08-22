@@ -1,4 +1,7 @@
 # ML-CLAP
+# Paper
+You can read our paper on [ArXiv](https://arxiv.org/abs/2406.07012). 
+
 # create env
 ```
    conda create -n ml-clap python=3.10
