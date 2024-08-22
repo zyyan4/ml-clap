@@ -1,0 +1,30 @@
+seed: 20
+device: cuda
+eval_num_caps: 5
+
+# audio
+mlclap:
+  audio_encoder:
+    encoder_type: ced_base
+    pretrained: False
+    time_patch_out: 0.0
+    freq_patch_out: 0.0
+
+  embed_size: 1024
+  embed_regularization: True
+  temperature: 0.07
+
+
+dataset:
+  data:
+    test_clotho:
+      - data/Clotho/tar/audiocaps_test.tar.gz
+  batch_size: 128
+  max_length: 30
+  min_length: 0.2
+  max_token_size: 50
+  sample_rate: 16000
+  resample: False
+  num_workers: 1
+
+infer_path: infer_models/clotho_finetune_le_mixture.pt
