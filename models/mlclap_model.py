@@ -26,15 +26,15 @@ class MLCLAPConfig:
 
 
 class MLCLAP(nn.Module):
-    def __init__(self, config: MLCLAPConfig, device: str = 'cuda') -> None:
+    def __init__(self, config: MLCLAPConfig) -> None:
         super().__init__()
         # audio encoder
         self.audio_encoder = AudioEncoderWrapper(model_type=config.audio_encoder['encoder_type'], pretrained=config.audio_encoder['pretrained'],
-                                                 time_patch_out=config.audio_encoder['time_patch_out'], freq_patch_out=config.audio_encoder['freq_patch_out'], training=config.training, device=device)
+                                                 time_patch_out=config.audio_encoder['time_patch_out'], freq_patch_out=config.audio_encoder['freq_patch_out'], training=config.training)
         audio_width = self.audio_encoder.embed_dim
         # text encoder
         self.text_encoder = TextEncoderSonarWrapper(
-            training=config.training, device=device)
+            training=config.training)
         text_width = self.text_encoder.text_width
         # project
         embed_size = config.embed_size

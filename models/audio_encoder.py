@@ -6,10 +6,10 @@ from models import ced
 
 
 class AudioEncoderWrapper(nn.Module):
-    def __init__(self, model_type: str = 'ced_base', training: bool = True, pretrained: bool = False, time_patch_out: float = 0.0, freq_patch_out: float = 0.0, device='cuda', **kwargs):
+    def __init__(self, model_type: str = 'ced_base', training: bool = True, pretrained: bool = False, time_patch_out: float = 0.0, freq_patch_out: float = 0.0, **kwargs):
         super().__init__()
         self.model = getattr(ced, model_type)(pretrained=pretrained, pooling='cat',
-                                              time_patch_out=time_patch_out, freq_patch_out=freq_patch_out, **kwargs).to(device)
+                                              time_patch_out=time_patch_out, freq_patch_out=freq_patch_out, **kwargs)
         self.model = self.model.train() if training else self.model.eval()
         self.embed_dim = self.model.embed_dim
         self.training = self.model.training

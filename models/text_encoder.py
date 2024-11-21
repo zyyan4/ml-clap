@@ -17,12 +17,11 @@ from sonar.models.sonar_text import (
 
 
 class TextEncoderSonarWrapper(nn.Module):
-    def __init__(self, tokenizer: str = "text_sonar_basic_encoder", encoder: str = "text_sonar_basic_encoder", max_seq_len: Optional[int] = None, training: bool = True, device: str = 'cuda'):
+    def __init__(self, tokenizer: str = "text_sonar_basic_encoder", encoder: str = "text_sonar_basic_encoder", max_seq_len: Optional[int] = None, training: bool = True):
         super().__init__()
-        self.device = torch.device(device)
         self.tokenizer = load_sonar_tokenizer(tokenizer, progress=True)
         self.model = load_sonar_text_encoder_model(
-            encoder, device=self.device, progress=True)
+            encoder, progress=True)
         self.model = self.model.train() if training else self.model.eval()
 
         self.max_seq_len = self.model.encoder_frontend.pos_encoder.max_seq_len if max_seq_len is None else max_seq_len
