@@ -23,5 +23,5 @@ This repo is the source for the Interspeech 2024 Paper [Bridging Language Gaps i
 ```
 # test
 ```
-   python infer.py -c config/pretrain.yaml
+   python infer.py -c config/pretrain_infer.yaml
 ```
