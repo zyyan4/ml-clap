@@ -47,7 +47,7 @@ class Infer():
         self.config = config
         self.device = self.config.device
         # setup model
-        self.model = MLCLAP(config.mlclap_config)
+        self.model = MLCLAP(config.mlclap_config, device=self.device)
         assert config.infer_path != '', 'Please config the infer model path'
         self.init_model(config.infer_path)
         self.model.to(self.device)

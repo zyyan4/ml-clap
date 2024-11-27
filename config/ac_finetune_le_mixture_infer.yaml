@@ -13,12 +13,13 @@ mlclap:
   embed_size: 1024
   embed_regularization: True
   temperature: 0.07
+  training: False
 
 
 dataset:
   data:
     test_ac:
-      - data/AudioCaps/tar/audiocaps_test.tar.gz
+      - data/AudioCaps/audiocaps_test.tar.gz
   batch_size: 128
   max_length: 30
   min_length: 0.2

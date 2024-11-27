@@ -8,12 +8,13 @@ This repo is the source for the Interspeech 2024 Paper [Bridging Language Gaps i
 # create env
 ```
    conda create -n ml-clap python=3.10
+   conda activate ml-clap
    conda install -c conda-forge libsndfile==1.0.31
-   pip install -r requirements.txt 
+   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 # pack json  to wds
 ```
-   bash run_json_to_wds.sh data/AudioCaps/test.json data/AudioCaps/tar/test
+   bash run_json_to_wds.sh data/AudioCaps/test.json data/AudioCaps/
 ```
 # wget resource
 ```
@@ -23,5 +24,5 @@ This repo is the source for the Interspeech 2024 Paper [Bridging Language Gaps i
 ```
 # test
 ```
-   python infer.py -c config/pretrain.yaml
+   python infer.py -c config/pretrain_infer.yaml
 ```
