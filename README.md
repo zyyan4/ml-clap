@@ -20,7 +20,9 @@ This repo is the source for the Interspeech 2024 Paper [Bridging Language Gaps i
 ```
    wget -P data/AudioCaps/ https://zenodo.org/records/13358171/files/audiocaps_test.tar.gz
    wget -P data/Clotho/ https://zenodo.org/records/13358171/files/clotho_test.tar.gz
-   wget -P infer_models/ https://zenodo.org/records/13358171/files/pretrain.pt
+   wget -P infer_models/ https://zenodo.org/records/14229658/files/pretrain.pt
+   wget -P infer_models/ https://zenodo.org/records/14229658/files/ac_finetune_le_mixture.pt
+   wget -P infer_models/ https://zenodo.org/records/14229658/files/clotho_finetune_le_mixture.pt
 ```
 # test
 ```
