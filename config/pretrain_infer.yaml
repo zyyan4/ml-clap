@@ -31,4 +31,4 @@ dataset:
   num_workers: 1
 
 infer_path: infer_models/pretrain.pt
-  #infer_path: https://zenodo.org/records/13358171/files/pretrain.pt
+  #infer_path: https://zenodo.org/records/14229658/files/pretrain.pt 
